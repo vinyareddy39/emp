@@ -10,7 +10,7 @@ import AuthorList from "./components/AuthorList";
 import AuthorProfile from "./components/AuthorProfile";
 import AuthorArticles from "./components/AuthorArticles";
 import EditArticle from './components/EditArticle'
-import WriteArticles from "./components/WriteArticles";
+import WriteArticles from "./components/writeArticles";
 import ArticleByID from "./components/ArticleById";
 import {Toaster} from 'react-hot-toast'
 import ProtectedRoute from "./components/ProtectedRoute";
