@@ -35,12 +35,17 @@ const connectDB=async()=>{
         app.listen(port,()=> console.log(`Server listening on ${port}....`))
     }
     catch(err){
-        console.error("Error in connecting to database:", err)
-        process.exit(1)
+        console.error("Error in connecting to database:", err.message)
+        setTimeout(() => process.exit(1), 500)
     }
 }
 
-connectDB()
+if (!process.env.DB_URL) {
+    console.error("CRITICAL ERROR: process.env.DB_URL is completely missing! You must add it to Render's Environment Variables tab.")
+    setTimeout(() => process.exit(1), 500)
+} else {
+    connectDB()
+}
 
 //to handle invalid path
 app.use((req,res,next)=>{
