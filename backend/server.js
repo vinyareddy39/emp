@@ -35,7 +35,8 @@ const connectDB=async()=>{
         app.listen(port,()=> console.log(`Server listening on ${port}....`))
     }
     catch(err){
-        console.log("Error in connecting to database:",err)
+        console.error("Error in connecting to database:", err)
+        process.exit(1)
     }
 }
 
